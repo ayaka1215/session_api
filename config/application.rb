@@ -36,5 +36,9 @@ module SessionApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # タイムゾーン設定
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
