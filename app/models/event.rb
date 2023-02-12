@@ -7,8 +7,8 @@ class Event < ApplicationRecord
   validates :place, presence: true, length: { maximum: 40 }
   # TODO：画像アップロード機能実装後
   # validates :image, presence: true
-  validate :date_cannot_be_in_the_past, on: :create
-  validate :start_end_check
+  # validate :date_cannot_be_in_the_past, on: :create
+  # validate :start_end_check
 
   # def date_cannot_be_in_the_past
   #   if date.present? && date < Date.today
