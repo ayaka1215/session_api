@@ -2,8 +2,8 @@ class Event < ApplicationRecord
   validates :title, presence: true, length: { maximum: 40 }
   validates :content, presence: true, length: { maximum: 1000 }
   validates :date, presence: true
-  # validates :start_time, presence: true
-  # validates :end_time, presence: true
+  validates :start_time, presence: true
+  validates :end_time, presence: true
   validates :place, presence: true, length: { maximum: 40 }
   # TODO：画像アップロード機能実装後
   # validates :image, presence: true
