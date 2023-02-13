@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
     def index
-		events = Event.all.order(id: "DESC")
+		events = Event.all.order(date: "ASC")
         render json: events
     end
 
     def create
-        Event.create(event_params)
+        Event.create!(event_params)
         head :created
     end
 
