@@ -9,6 +9,11 @@ class EventsController < ApplicationController
         head :created
     end
 
+    def show
+        event = Event.find(params[:id])
+        render json: event
+    end
+
     private
     def event_params
         params.require(:event).permit(:title, :content, :date, :start_time, :end_time, :place, :image)
