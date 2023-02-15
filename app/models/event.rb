@@ -11,14 +11,10 @@ class Event < ApplicationRecord
   validate :start_end_check
 
   def date_cannot_be_in_the_past
-    if date.present? && date < Date.today
-      errors.add(:expiration_date, "過去の日付は入力できません")
-    end
+    errors.add(:expiration_date, "過去の日付は入力できません") if date.present? && date < Date.today
   end
 
   def start_end_check
-    if start_time > end_time
-      errors.add(:end_time, "は開始時刻より遅い時間を選択してください")
-    end
+    errors.add(:end_time, "は開始時刻より遅い時間を選択してください") if start_time > end_time
   end
 end
