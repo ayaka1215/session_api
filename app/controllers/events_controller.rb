@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     end
 
     def update
-        Event.update!(event_params)
+        Event.update(event_params)
         head :ok
     end
 
