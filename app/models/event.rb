@@ -15,6 +15,6 @@ class Event < ApplicationRecord
   end
 
   def start_end_check
-    errors.add(:end_time, "は開始時刻より遅い時間を選択してください") if start_time > end_time
+    errors.add(:end_time, "は開始時刻より遅い時間を選択してください") if start_time.to_i > end_time.to_i
   end
 end
