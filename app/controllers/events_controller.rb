@@ -20,7 +20,7 @@ class EventsController < ApplicationController
     end
 
     def destroy
-        event.destroy
+        event.destroy!
         head :ok
     end
 
