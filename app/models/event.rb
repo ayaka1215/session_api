@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  acts_as_paranoid
   mount_uploader :image, ImageUploader
   
   validates :title, presence: true, length: { maximum: 40 }

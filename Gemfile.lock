@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ActsAsParanoid/acts_as_paranoid.git
+  revision: 47e59e4bbbad22d5f56fbd35cf158eaff70bbea0
+  specs:
+    acts_as_paranoid (0.8.1)
+      activerecord (>= 5.2, < 7.1)
+      activesupport (>= 5.2, < 7.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -179,6 +187,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  acts_as_paranoid!
   bootsnap (>= 1.4.4)
   byebug
   carrierwave
