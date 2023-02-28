@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ActsAsParanoid/acts_as_paranoid.git
+  revision: 47e59e4bbbad22d5f56fbd35cf158eaff70bbea0
+  specs:
+    acts_as_paranoid (0.8.1)
+      activerecord (>= 5.2, < 7.1)
+      activesupport (>= 5.2, < 7.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -116,8 +124,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.1-arm64-darwin)
       racc (~> 1.4)
-    paranoia (2.6.1)
-      activerecord (>= 5.1, < 7.1)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -181,12 +187,12 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  acts_as_paranoid!
   bootsnap (>= 1.4.4)
   byebug
   carrierwave
   listen (~> 3.3)
   mysql2 (~> 0.5)
-  paranoia
   puma (~> 5.0)
   rack-cors
   rails (~> 6.1.7)
