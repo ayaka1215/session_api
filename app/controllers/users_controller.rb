@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    users = User.all.order(data: "ASC")
+    users = User.all
     render json: users
   end
 end
