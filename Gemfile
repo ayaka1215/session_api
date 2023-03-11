@@ -45,3 +45,4 @@ gem 'acts_as_paranoid', github: 'ActsAsParanoid/acts_as_paranoid'
 
 gem 'devise'
 gem 'devise_token_auth'
+gem 'pry-rails'
