@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     head :ok
   end
 
+  def use_permit
+    user = User.find(params[:id])
+    user.update!(is_permitted: true)
+    head :ok
+  end
+
   def destroy
     user = User.find(params[:id])
     user.destroy!
