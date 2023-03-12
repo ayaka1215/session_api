@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_12_023116) do
+ActiveRecord::Schema.define(version: 2023_03_12_083500) do
 
   create_table "events", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2023_03_12_023116) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_part_relations", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "part_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["part_id"], name: "index_user_part_relations_on_part_id"
+    t.index ["user_id"], name: "index_user_part_relations_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -59,4 +68,6 @@ ActiveRecord::Schema.define(version: 2023_03_12_023116) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "user_part_relations", "parts"
+  add_foreign_key "user_part_relations", "users"
 end
