@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_12_020150) do
+ActiveRecord::Schema.define(version: 2023_03_12_022441) do
 
   create_table "events", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2023_03_12_020150) do
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_events_on_deleted_at"
+  end
+
+  create_table "parts", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|

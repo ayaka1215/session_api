@@ -7,13 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-10.times do |n|
-    Event.create!(
-        title: "セッション Vol.#{n + 1}",
-        date: "2024-02-08",
-        start_time: "10:00",
-        end_time: "13:00",
-        content: "セッションを開催します！",
-        place: "渋谷#{n}号館",
-    )
-  end
+# 10.times do |n|
+#     Event.create!(
+#         title: "セッション Vol.#{n + 1}",
+#         date: "2024-02-08",
+#         start_time: "10:00",
+#         end_time: "13:00",
+#         content: "セッションを開催します！",
+#         place: "渋谷#{n}号館",
+#     )
+#   end
+
+Part.create!(
+        name: "ボーカル"
+)
+
+Part.create!(
+    name: "ギター"
+)
+
+Part.create!(
+    name: "ドラム"
+)
+
+Part.create!(
+    name: "ベース"
+)
+
+Part.create!(
+    name: "キーボード"
+)
