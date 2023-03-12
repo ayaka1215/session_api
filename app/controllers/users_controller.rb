@@ -10,11 +10,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
     user = User.find(params[:id])
     user.update!(user_params)
     head :ok
-    
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy!
+    head :ok
   end
 
   private
