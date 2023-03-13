@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-    # before_action :set_target_event, only: %i[show update destroy]
+    before_action :set_target_event, only: [:show, :update, :destroy]
+     
     def index
 		events = Event.all.order(date: "ASC")
         render json: events
@@ -11,19 +12,16 @@ class EventsController < ApplicationController
     end
 
     def show
-        event = Event.find(params[:id])
-        render json: event
+        render json: @event
     end
 
     def update
-        event = Event.find(params[:id])
-        event.update!(event_params)
+        @event.update!(event_params)
         head :ok
     end
 
     def destroy
-        event = Event.find(params[:id])
-        event.destroy!
+        @event.destroy!
         head :ok
     end
 
@@ -33,6 +31,6 @@ class EventsController < ApplicationController
     end
 
     def set_target_event
-        event = Event.find(params[:id])
+        @event = Event.find(params[:id])
     end
 end
