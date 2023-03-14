@@ -27,10 +27,10 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :image)
+    params.require(:user).permit(:name, :email, :image, part_ids: [])
   end
 
   def set_target_user
-    @user = User.find(params[:id])
+    @user = User.where(id: params[:id]).to_json(include: :parts)
   end
 end
